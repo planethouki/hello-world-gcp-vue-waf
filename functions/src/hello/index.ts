@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     // LoadBalancerは追記するが、Firebase Functionsは追記しない？
     // <load-balancer-ip>と偽装した場合、<load-balancer-ip>,<your-ip>の順になる
     // なので、最後の要素が<load-balancer-ip>であるかどうかで判定する
-    if (forwardedIps.length >= 2 && forwardedIps[forwardedIps.length - 1].trim() === '34.54.110.179') {
+    if (forwardedIps.length >= 2 && forwardedIps[forwardedIps.length - 1].trim() === '34.36.148.74') {
         next();
     } else {
         res.status(403).send('Forbidden');
